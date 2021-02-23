@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import { SET_PREV_PAGE, GET_PAGE, SET_NAME, SET_PAGE } from '../actions/actionTypes';
+import { SET_PREV_PAGE, GET_PAGE, SET_NAME, SET_PAGE, SET_PLAYER } from '../actions/actionTypes';
 
 const INITIAL_STATE = {
 	page: 'firstPage',
 	pageStack: [ 'home' ],
-	name: ''
+	name: '',
+	players: []
 };
 
 export const gameSettings = (state = INITIAL_STATE, action) => {
@@ -27,6 +28,13 @@ export const gameSettings = (state = INITIAL_STATE, action) => {
 			});
 		case GET_PAGE:
 			return state.pageStack[state.pageStack.length - 1];
+		case SET_PLAYER:
+			return Object.assign({}, state, {
+				...state,
+				plyers: action.payload,
+				pageStack: [ ...state.players, action.payload ]
+			});
+
 		default:
 			return state;
 	}

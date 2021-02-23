@@ -8,3 +8,7 @@ export const GET_STARTED = 'GET_STARTED';
 export const SET_TYPE = 'SET_TYPE';
 export const SET_CATEGORY = 'SET_CATEGORY';
 export const SET_ROUNDS = 'SET_ROUNDS';
+export const SET_PLAYER = 'SET_PLAYER'; 
+
+export const SET_CURRENT_ROUND = 'SET_CURRENT_ROUND';
+export const SET_TOTAL_ROUNDS = 'SET_TOTAL_ROUNDS';

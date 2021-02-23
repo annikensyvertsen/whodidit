@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity, Slider } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { setRounds } from '../redux/actions/gameModeActions';
 import { setPage } from '../redux/actions/gameSettingsActions';
+import { setTotalRounds } from '../redux/actions/roundActions';
 
 export const RoundsMenu = ({ navigation }) => {
 	const [ rounds, setLocalRounds ] = useState(5);
@@ -25,6 +26,8 @@ export const RoundsMenu = ({ navigation }) => {
 
 			<TouchableOpacity
 				onPress={() => {
+					setTotalRounds(rounds);
+					//setRounds can be removed when 'safe' since we have total rounds
 					setRounds(rounds);
 					navigation.navigate('PinPage');
 					dispatch(setPage('PinPage'));

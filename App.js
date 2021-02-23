@@ -9,6 +9,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { GetStarted } from './views/firstPage';
 import { PinPage } from './views/pinPage';
 import { RoundsMenu } from './components/roundsMenu';
+import { DescribeWrite } from './views/describeWrite'
+import { DescribeWaiting } from './components/describeWaiting'
+
 const Stack = createStackNavigator();
 
 export const App = () => {
@@ -63,6 +66,22 @@ export const App = () => {
 						}}
 						name="RoundsMenu"
 						component={RoundsMenu}
+					/>
+					<Stack.Screen
+						options={{
+							animationEnabled: false,
+							headerShown: false
+						}}
+						name="DescribeWaiting"
+						component={DescribeWaiting}
+					/>
+					<Stack.Screen
+						options={{
+							animationEnabled: false,
+							headerShown: false
+						}}
+						name="DescribeWrite"
+						component={DescribeWrite}
 					/>
 				</Stack.Navigator>
 			</NavigationContainer>

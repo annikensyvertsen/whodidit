@@ -9,6 +9,7 @@ export const getStarted = () => ({
 	type: GET_STARTED
 });
 
+//can be removed since I've added a roundreducer 
 export const setRounds = (round) => ({
 	type: SET_ROUNDS,
 	payload: round
